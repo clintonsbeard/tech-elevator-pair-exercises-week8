@@ -23,8 +23,8 @@
         <h2>Explore The Solar System</h2>
         <p> Use these state of the art web applications to learn more about the solar system! </p>
         <ul>
-            <li><a href="#">Alien Age</a></li>
-            <li><a href="#">Alien Weight</a></li>
-            <li><a href="#">Drive Time</a></li>               
+            <li><a href="alienAge">Alien Age</a></li>
+            <li><a href="alienWeight">Alien Weight</a></li>
+            <li><a href="driveTime">Drive Time</a></li>               
         </ul>
     </nav>
