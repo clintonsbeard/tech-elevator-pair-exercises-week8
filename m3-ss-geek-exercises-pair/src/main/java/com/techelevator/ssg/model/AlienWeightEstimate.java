@@ -2,30 +2,36 @@ package com.techelevator.ssg.model;
 
 public class AlienWeightEstimate {
 
+	private String planetChoice;
 	private double earthWeight;
 	
-	public double resultWeight(double earthWeight) {
-		double earthMass = earthWeight / 9.81;
-		if (mercury) {
-			resultWeight = earthMass
+	public AlienWeightEstimate(String planetChoice, double earthWeight) {
+		this.planetChoice = planetChoice;
+		this.earthWeight = earthWeight;
+	}
+
+	public double getResultWeight() {
+		double resultWeight = 0;
+		if (planetChoice.equalsIgnoreCase("Mercury")) {
+			resultWeight = earthWeight * 0.37;
 		}
-		else if (venus) {
-			resultWeight = earthMass
+		else if (planetChoice.equalsIgnoreCase("Venus")) {
+			resultWeight = earthWeight * 0.90;
 		}
-		else if (mars) {
-			resultWeight = earthMass
+		else if (planetChoice.equalsIgnoreCase("Mars")) {
+			resultWeight = earthWeight * 0.38;
 		}
-		else if (jupiter) {
-			resultWeight = earthMass
+		else if (planetChoice.equalsIgnoreCase("Jupiter")) {
+			resultWeight = earthWeight * 2.65;
 		}
-		else if (saturn) {
-			resultWeight = earthMass
+		else if (planetChoice.equalsIgnoreCase("Saturn")) {
+			resultWeight = earthWeight * 1.13;
 		}
-		else if (uranus) {
-			resultWeight = earthMass
+		else if (planetChoice.equalsIgnoreCase("Uranus")) {
+			resultWeight = earthWeight * 1.09;
 		}
-		else if (neptune) {
-			resultWeight = earthMass
+		else if (planetChoice.equalsIgnoreCase("Neptune")) {
+			resultWeight = earthWeight * 1.43;
 		}
 		return resultWeight;
 	}

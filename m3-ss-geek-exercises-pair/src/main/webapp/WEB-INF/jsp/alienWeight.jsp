@@ -4,7 +4,7 @@
 
 <section id="main-content">
 <h2>Alien Weight Calculator</h2>
-	<c:url var="weightSearchResult" value="/weightResult" />
+	<c:url var="weightSearchResult" value="/alienWeightResult" />
 	<form action="${weightSearchResult}" method="GET">
 		<div>
 			<label for="planets">Choose a Planet</label>
