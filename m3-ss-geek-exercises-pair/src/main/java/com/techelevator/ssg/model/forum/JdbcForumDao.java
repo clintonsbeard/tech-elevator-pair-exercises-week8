@@ -23,7 +23,7 @@ public class JdbcForumDao implements ForumDao {
 	@Override
 	public List<ForumPost> getAllPosts() {
 		List<ForumPost> allPosts = new ArrayList<>();
-		String sqlSelectAllPosts = "SELECT * FROM forum_post";
+		String sqlSelectAllPosts = "SELECT * FROM forum_post ORDER BY post_date DESC";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllPosts);
 		while(results.next()) {
 			ForumPost post = new ForumPost();

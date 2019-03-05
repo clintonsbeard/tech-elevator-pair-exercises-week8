@@ -25,6 +25,7 @@
         <ul>
             <li><a href="alienAge">Alien Age</a></li>
             <li><a href="alienWeight">Alien Weight</a></li>
-            <li><a href="driveTime">Drive Time</a></li>               
+            <li><a href="driveTime">Drive Time</a></li>  
+            <li><a href="viewPosts">Space Forum</a></li>                 
         </ul>
     </nav>

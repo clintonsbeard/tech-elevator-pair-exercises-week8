@@ -1,17 +1,28 @@
 package com.techelevator.ssg.controller;
 
+import java.time.LocalDateTime;
+
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.techelevator.ssg.model.AlienAgeEstimate;
 import com.techelevator.ssg.model.AlienWeightEstimate;
 import com.techelevator.ssg.model.DriveTimeEstimate;
+import com.techelevator.ssg.model.forum.ForumDao;
+import com.techelevator.ssg.model.forum.ForumPost;
 
 @Controller
 public class HomeController {
 
+	@Autowired
+	private ForumDao forumDao;
+	
 	@RequestMapping("/")
 	public String displayHomePage() {
 		return "homePage";
@@ -19,17 +30,22 @@ public class HomeController {
 	
 	@RequestMapping("/alienWeight")
 	public String displayAlienWeight() {
-		return "/alienWeight";
+		return "alienWeight";
 	}
 	
 	@RequestMapping("/alienAge")
 	public String displayAlienAge() {
-		return "/alienAge";
+		return "alienAge";
 	}
 	
 	@RequestMapping("/driveTime")
 	public String displayDriveTime() {
-		return "/driveTime";
+		return "driveTime";
+	}
+	
+	@RequestMapping("/submitPost")
+	public String displaySubmitPost() {
+		return "submitPost";
 	}
 	
 	@RequestMapping("/alienWeightResult")
@@ -68,4 +84,18 @@ public class HomeController {
 		
 		return "driveTimeResult";
 	}
+	
+	@RequestMapping(path="/postProcessor", method=RequestMethod.POST)
+	public String submitPostAndRedirect(ForumPost newForumPost) {
+		newForumPost.setDatePosted(LocalDateTime.now());
+		forumDao.save(newForumPost);
+		return "redirect:/viewPosts";
+	}
+	
+	@RequestMapping(path="/viewPosts", method=RequestMethod.GET)
+	public String getAllPosts(ModelMap map) {
+		map.addAttribute("posts", forumDao.getAllPosts());	
+		return "viewPosts";
+	}
+	
 }
