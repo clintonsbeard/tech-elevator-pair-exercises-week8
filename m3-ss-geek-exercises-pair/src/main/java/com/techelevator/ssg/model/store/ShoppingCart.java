@@ -1,11 +1,11 @@
 package com.techelevator.ssg.model.store;
 
-public class Product {
+public class ShoppingCart {
 
 	private Long id;
 	private String name;
-	private String description;
 	private DollarAmount price;
+	private Long quantity;
 	private String imageName;
 	
 	public Long getId() {
@@ -20,17 +20,17 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
 	public DollarAmount getPrice() {
 		return price;
 	}
 	public void setPrice(DollarAmount price) {
 		this.price = price;
+	}
+	public Long getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Long quantity) {
+		this.quantity = quantity;
 	}
 	public String getImageName() {
 		return imageName;

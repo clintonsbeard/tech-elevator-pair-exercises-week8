@@ -253,3 +253,130 @@ section#calculatorResult h2 {
 	color: white;
 	text-align: center;
 }
+
+/* CSS for Product List */
+
+#list-flexbox {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#list-item {
+	display: flex;
+	margin: 10px;
+	flex: 0 1 auto;
+	flex-basis: 100%;
+	text-align: left;
+	justify-content: flex-start;
+}
+
+#list-image {
+	display: inline-block;
+}
+
+#list-image img {
+	display: inline-block;
+	width: 200px;
+ 	height: auto;
+ 	margin-right: 20px;
+}
+
+#list-text {
+	display: inline-block;
+	text-align: left;
+}
+
+#list-name {
+	font-weight: bold;
+	display: inline-block;
+}
+
+#list-name a {
+	text-decoration: none;
+	color: #000000;
+}
+
+#list-price {
+	display: block;
+	color: #1E90FF;
+	font-size: large;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+h3 {
+	text-align: center;
+	padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+/* CSS for Product Detail */
+
+#detailFlexbox {
+	width: 100%;
+	align: center;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	justify-content: space-evenly;
+	align-content: flex-start;
+}
+
+#detailBox {
+	text-align: left;
+	margin: 10px;
+	padding-right: 25%;
+}
+
+#detailPrice {
+	display: block;
+	color: #1E90FF;
+	font-size: large;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+#detailName {
+	font-weight: bold;
+	font-size: large;
+}
+
+#detailDesc {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#detailImg img {
+	width: 400px;
+	height: auto;
+}
+
+#detailAddToCart input[type=text], input[type=datetime], textarea {
+	width: 200px;
+}
+
+#detailAddToCart input[type=submit] {
+	background-color: #1E90FF;
+	color: #FFFFFF;
+}
+
+#detailAddToCart label {
+	padding: 30px;
+	margin-left: -10px;
+}
+
+#cartTable {
+	width: 100%;
+	display: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#cartTable tr, td {
+	color: #000000;
+}

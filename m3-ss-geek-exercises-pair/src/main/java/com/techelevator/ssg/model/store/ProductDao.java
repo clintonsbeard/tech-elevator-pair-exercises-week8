@@ -6,4 +6,5 @@ public interface ProductDao {
 
 	public List<Product> getAllProducts();
 	public Product getProductById(Long productId);
+	
 }
