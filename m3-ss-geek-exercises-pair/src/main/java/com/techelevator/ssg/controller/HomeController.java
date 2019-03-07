@@ -19,11 +19,12 @@ import com.techelevator.ssg.model.DriveTimeEstimate;
 import com.techelevator.ssg.model.forum.ForumDao;
 import com.techelevator.ssg.model.forum.ForumPost;
 import com.techelevator.ssg.model.store.ProductDao;
+import com.techelevator.ssg.model.store.ShoppingCart;
 
 @Controller
-@SessionAttributes("customerCart")
+@SessionAttributes("cart")
 public class HomeController {
-
+	
 	@Autowired
 	private ForumDao forumDao;
 	
@@ -124,9 +125,26 @@ public class HomeController {
 	}
 	
 	@RequestMapping(path="/addToCart", method=RequestMethod.POST)
-	public String submitProductAndRedirect(ModelMap map) {
-		map.put(key, value)
+	public String submitProductAndRedirect(ModelMap map, @RequestParam long id, @RequestParam int quantity) {
+		ShoppingCart cart;
+		if (map.get("cart") == null) {
+			cart = new ShoppingCart();
+		}
+		else {
+			cart = (ShoppingCart)map.get("cart");
+		}
+		
+		
 		return "redirect:/viewShoppingCart";
 	}
 	
+	@RequestMapping(path="/viewShopppingCart", method=RequestMethod.GET)
+	
+//	public String getProductDetail(@RequestParam String id, ModelMap map) {
+//		
+//	}
+//		long idLong = Long.parseLong(id);
+//		map.addAttribute("product", productDao.getProductById(idLong));
+//		return "viewShoppingCart";
+		
 }

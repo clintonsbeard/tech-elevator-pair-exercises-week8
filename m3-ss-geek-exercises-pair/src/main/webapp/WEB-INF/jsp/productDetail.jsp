@@ -21,9 +21,12 @@
 				<c:out value="${product.description}" />
 			</div>
 			<div id="detailAddToCart">
-				<label for="quantity">Quantity to Buy</label>
-				<input type="text" name="quantity"/>
-				<input type="submit" value="Add to Cart"/>
+				<form action="/addToCart" method="POST">
+					<label for="quantity">Quantity to Buy</label>
+					<input type="text" name="quantity"/>
+					<input type="hidden" name="id" value="${product.id}"/>
+					<input type="submit" value="Add to Cart"/>
+				</form>
 			</div>
 		</div>
 	</div>

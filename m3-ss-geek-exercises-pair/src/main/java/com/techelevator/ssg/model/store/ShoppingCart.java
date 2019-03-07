@@ -1,42 +1,21 @@
 package com.techelevator.ssg.model.store;
 
+import java.util.Map;
+
 public class ShoppingCart {
 
-	private Long id;
-	private String name;
-	private DollarAmount price;
-	private Long quantity;
-	private String imageName;
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public DollarAmount getPrice() {
-		return price;
-	}
-	public void setPrice(DollarAmount price) {
-		this.price = price;
-	}
-	public Long getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(Long quantity) {
-		this.quantity = quantity;
-	}
-	public String getImageName() {
-		return imageName;
-	}
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
+	private Map<Long, Product> products;
+
+	public void addToCart (int quantity, Product product) {
+		// shopping cart item (product, qty)
+		// map <productId, shopping cart item>
+		
+		// does map have a shopping cart item for the product id?
+		// if yes, get the current item and increment the quantity
+		// else, create a new item, set the product and quantity
+		// put item in map
 	}
 	
+	// double get grandTotal()
+	// loop through all values of the map and add them together, add $
 }
